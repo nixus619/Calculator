@@ -23,11 +23,6 @@ body {
     flex-direction: column;
 }
 
-button{
-    /*width: 8em;
-    height: 8em;*/
-}
-
 .row{
     display: flex;
     flex: 1 1 100%;
