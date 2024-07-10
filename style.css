@@ -18,7 +18,8 @@ body {
     margin: auto;
     width: 400px;
     height: 500px;
-    border: 10px solid black;
+    border: 20px;
+    border-style:double;
     background-color:  gray ;
     flex-direction: column;
 }
@@ -51,6 +52,7 @@ button{
     border-radius: 8px;
     font-family: monospace;
     font-size: 3em;
+
 }
 
 .number{
@@ -64,7 +66,8 @@ button{
     overflow: hidden;
 }
 
-.operand{
+.operand,
+.equals{
     background-color:cornflowerblue;
 }
 
@@ -72,10 +75,21 @@ button{
     background-color:rgb(255, 204, 153);
 }
 
-button:hover{
+/*button:hover{
+    filter:brightness(80%);
+}*/
+
+.operand:focus{
     filter:brightness(80%);
 }
 
-button:focus{
-    filter:brightness(80%)
+.number:active,
+.spec:active,
+.equals:active{
+    filter:brightness(80%);
+    -webkit-box-shadow: inset 0px 0px 5px;
+    -moz-box-shadow: inset 0px 0px 5px;
+         box-shadow: inset 0px 0px 5px;
+    outline: none;
 }
+
