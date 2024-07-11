@@ -55,7 +55,8 @@ button{
 
 }
 
-.number{
+.number,
+.decimal{
     background-color: rgb(179, 217, 255);
 }
 
@@ -85,7 +86,8 @@ button{
 
 .number:active,
 .spec:active,
-.equals:active{
+.equals:active,
+.decimal:active{
     filter:brightness(80%);
     -webkit-box-shadow: inset 0px 0px 5px;
     -moz-box-shadow: inset 0px 0px 5px;
