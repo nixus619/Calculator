@@ -1,20 +1,20 @@
 function operate(first, second, operand){
     if(operand=="+"){
-        if((first+second).toString().length>7){
+        if((first+second).toString().length>8){
             return (first + second).toPrecision(3);
         } else {
             return first + second;
         }
     }
     if(operand=="-"){
-        if((first - second).toString().length>7){
+        if((first - second).toString().length>8){
             return (first-second).toPrecision(3);
         } else {
             return first - second;
         }
     }
     if(operand=="*"){
-        if((first * second).toString().length>7){
+        if((first * second).toString().length>8){
             return (first*second).toPrecision(3);
         } else{
             return first * second;
@@ -24,9 +24,9 @@ function operate(first, second, operand){
         if(second==0){
             return "Nice try";
         } else {
-            if((first/second).toString().length>7) {
+            if((first/second).toString().length>6) {
                 return ((first/second).toPrecision(3));
-            } else{ 
+            } else{
                 return (first/second);
             }
         }
@@ -70,7 +70,7 @@ let complete = false;
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         if(button.classList.contains("number")) {
-            answer.textContent = button.textContent;
+            //answer.textContent = button.textContent;
             if(first==null && operand==null && complete==false){
                 first = parseInt(button.textContent);
                 console.log(first);
@@ -87,8 +87,12 @@ buttons.forEach((button) => {
                             answer.textContent = second;
                         }
                     } else{
-                        second = second + "" + parseInt(button.textContent);
-                        answer.textContent = second;
+                        if(second.toString().length<8){
+                            second = second + "" + parseInt(button.textContent);
+                            answer.textContent = second;
+                        }
+                        //second = second + "" + parseInt(button.textContent);
+                        //answer.textContent = second;
                     }
                 }
                 answer.textContent=second;
@@ -110,8 +114,11 @@ buttons.forEach((button) => {
                     }
                     
                 } else{
-                    first = first + "" + parseInt(button.textContent);
-                    answer.textContent = first;
+                    if(first.toString().length<8){
+                        first = first + "" + parseInt(button.textContent);
+                        answer.textContent = first;
+                    }
+                    
                 }
                 
                 console.log(first);
