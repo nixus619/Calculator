@@ -1,18 +1,34 @@
 function operate(first, second, operand){
     if(operand=="+"){
-        return (first + second);
+        if((first+second).toString().length>7){
+            return (first + second).toPrecision(3);
+        } else {
+            return first + second;
+        }
     }
     if(operand=="-"){
-        return first - second;
+        if((first - second).toString().length>7){
+            return (first-second).toPrecision(3);
+        } else {
+            return first - second;
+        }
     }
     if(operand=="*"){
-        return first * second;
+        if((first * second).toString().length>7){
+            return (first*second).toPrecision(3);
+        } else{
+            return first * second;
+        }
     }
     if(operand=="/"){
         if(second==0){
             return "Nice try";
         } else {
-            return first/second;
+            if((first/second).toString().length>7) {
+                return ((first/second).toPrecision(3));
+            } else{ 
+                return (first/second);
+            }
         }
     }
 }
@@ -32,6 +48,15 @@ function specialFunction(first,func){
         } else {
             return first + ".";
         }
+    }
+}
+
+function checkSize(answer){
+    if(answer.toString().length > 7){
+        let length = answer.toString().length;
+        let extraLength = length-8
+        console.log(length-8);
+        return answer.toString().substring(0,8) + "e+" + extraLength;
     }
 }
 
